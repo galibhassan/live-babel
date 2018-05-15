@@ -1,5 +1,6 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,15 @@
   <title>Live Transpiler - Galib </title>
   <link rel="stylesheet" href="./src/css/main.css">
 </head>
+
 <body>
-  <div class="titleBar">Autodesk AppFramework Transpiler</div>
+  <div class="titleBar">
+    A Live Transpiler for AppFramework Wiki
+    <span class="smallText fadeText floatRight">- by Galib Hassan </span>
+  </div>
+
   <div class="header">
-    <div class="heading">
-      A Live Transpiler for AppFramework Wiki
-    </div>
-    <span class="smallText fadeText">- by Galib Hassan </span> 
+
   </div>
   <div class="io">
     <div id="inputDiv" class="inputDiv scroll4" contenteditable="true" spellcheck="false">
@@ -23,7 +26,16 @@
       output
     </div>
   </div>
-  <div class="footer"></div>
-<script src="./dist/bundle.js"></script>
+
+  <div class="liveAppContainer">
+    <div class="liveAppTitleBar">
+      <span class="smallText"> Your Live App! </span>
+      <span class="smallText floatRight topMarginSmall"> id="liveApp" </span>
+    </div>
+    <div id="liveApp" class="scroll4"> </div>
+  </div>
+
+  <script src="./dist/bundle.js"></script>
 </body>
+
 </html>

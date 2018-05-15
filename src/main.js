@@ -1,18 +1,23 @@
 var babel = require('babel-core');
+var React = require('react');
+var ReactDOM = require('react-dom');
+
 
 window.addEventListener("load", function () {
 
   var inputDiv = document.getElementById('inputDiv');
   var outputDiv = document.getElementById('outputDiv');
+  var liveApp = document.getElementById('liveApp');
+
   inputDiv.addEventListener('keyup', onInputChange)
-  
+
   // Presets list
   var presetsList = {
-    jsx :{
+    jsx: {
       name: "JSX to JS",
       path: require("babel-preset-react")
-    }, 
-    es6_2015 :{
+    },
+    es6_2015: {
       name: "ES6 2015 to JS",
       path: require("babel-preset-es2015")
     }
@@ -20,6 +25,7 @@ window.addEventListener("load", function () {
 
   function onInputChange(event) {
     var code = inputDiv.innerText;
+
     // console.log(code);
 
     try {
@@ -27,13 +33,22 @@ window.addEventListener("load", function () {
         presets: [presetsList.jsx.path, presetsList.es6_2015.path]
       });
       outputDiv.innerHTML = `<pre> ${result.code} </pre>`;
-
+      if (code.trim() === "") {
+        outputDiv.innerText = "";
+      }
     }
     catch (err) {
       outputDiv.innerText = err;
     }
 
-
+    try {
+      eval(result.code);
+      if (code.trim() === "") {
+        liveApp.innerText = "";
+      }
+    } catch (err2) {
+      liveApp.innerHTML = err2;
+    }
   }
 });
 
