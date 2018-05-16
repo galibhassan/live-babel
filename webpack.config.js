@@ -5,7 +5,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: "bundle.js"
-  }, 
+  },
 
   module: {
     rules: [
@@ -15,11 +15,11 @@ module.exports = {
         loader: 'babel-loader'
       }
     ]
-  }, 
+  },
 
   node: {
-    fs: 'empty', 
-    module: 'empty', 
+    fs: 'empty',
+    module: 'empty',
     net: 'empty'
   }
 
