@@ -34,7 +34,7 @@ window.addEventListener("load", function () {
       });
       outputDiv.innerHTML = `<pre> ${result.code} </pre>`;
       if (code.trim() === "") {
-        outputDiv.innerText = "";
+        outputDiv.innerHTML = "<pre></pre>";
       }
     }
     catch (err) {
@@ -42,12 +42,13 @@ window.addEventListener("load", function () {
     }
 
     try {
+      liveApp.innerHTML = "";
       eval(result.code);
       if (code.trim() === "") {
-        liveApp.innerText = "";
+        liveApp.innerHTML = "";
       }
     } catch (err2) {
-      liveApp.innerHTML = err2;
+      liveApp.innerHTML = err2;      
     }
   }
 });

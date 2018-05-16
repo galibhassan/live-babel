@@ -31535,31 +31535,10 @@ module.exports = exports["default"];
 
 
 var babel = __webpack_require__(237);
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-
 var React = __webpack_require__(96);
 var ReactDOM = __webpack_require__(240);
 
 window.addEventListener("load", function () {
-  var mango = 55555;
-
-  // react testing -----------
-  /* 
-    class MyMessageComp extends React.Component {
-      render() {
-        return (
-          <div> Helo {this.props.name} </div>
-        );
-      }
-    }
-  
-    var liveApp = document.getElementById('liveApp');
-    console.log(liveApp);
-    ReactDOM.render(<MyMessageComp name="Autodeskoooooo" />, liveApp);
-  */
-  // -----------------------
-
 
   var inputDiv = document.getElementById('inputDiv');
   var outputDiv = document.getElementById('outputDiv');
@@ -31590,16 +31569,17 @@ window.addEventListener("load", function () {
       });
       outputDiv.innerHTML = '<pre> ' + result.code + ' </pre>';
       if (code.trim() === "") {
-        outputDiv.innerText = "";
+        outputDiv.innerHTML = "<pre></pre>";
       }
     } catch (err) {
       outputDiv.innerText = err;
     }
 
     try {
+      liveApp.innerHTML = "";
       eval(result.code);
       if (code.trim() === "") {
-        liveApp.innerText = "";
+        liveApp.innerHTML = "";
       }
     } catch (err2) {
       liveApp.innerHTML = err2;
