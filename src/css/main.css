@@ -81,7 +81,7 @@ body{
 .liveAppContainer{
   grid-column: 2/3;
   grid-row: 3/5;
-  height: 270px;
+  height: 30%;
 }
 .liveAppTitleBar{
   box-shadow: 3px 1px 19px 2px rgba(0,0,0,.4);
