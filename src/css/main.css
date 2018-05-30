@@ -30,6 +30,7 @@
   padding-right: 15px;
 }
 body{
+  width: 80%;
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
   grid-template-rows: 40px 2fr 30px 2fr;
